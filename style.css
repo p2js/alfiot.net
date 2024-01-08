@@ -7,10 +7,10 @@
 
 :root {
     --text-color: #ccc;
-    --accent-color: #2A8063;
-    --main-link-filter: invert(57%) brightness(100%);
+    --accent-color: #329977;
+    --main-link-filter: invert(65%) brightness(100%);
     --main-link-hover-filter: invert(85%) brightness(100%);
-    --project-link-filter: invert(80%) brightness(100%);
+    --project-link-filter: invert(95%) brightness(100%);
     --startup-animation-delay: 0.1s;
 }
 

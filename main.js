@@ -1,5 +1,5 @@
 // Age calculation + insertion
-const dob = new Date(2005, 4, 7);
+const dob = new Date(2005, 3, 7);
 
 let diff = new Date(Date.now() - dob.getTime());
 let age = Math.abs(diff.getUTCFullYear() - 1970);
