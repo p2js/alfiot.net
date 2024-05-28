@@ -3,16 +3,11 @@ const dob = new Date(2005, 3, 7);
 
 let diff = new Date(Date.now() - dob.getTime());
 let age = Math.abs(diff.getUTCFullYear() - 1970);
-document.getElementById("age").innerText = age;
+window.age.innerText = age;
 
 // Enlightenment
 let background = document.getElementById("background");
-let pageContent = document.getElementById("mainContent");
 let styleLink = document.querySelector('link[href="style.css"]');
-let button = document.getElementById("enlightenmentButton");
-let tooltip = document.getElementById("enlightenmentTooltip");
-let icons = document.querySelectorAll(".icon");
-let thumbnails = document.querySelectorAll(".projectThumbnail");
 
 // fetch state from local storage
 let enlightened = localStorage.getItem("enlightened");
@@ -22,24 +17,20 @@ if (enlightened) removeStyle();
 function removeStyle() {
     document.body.removeChild(background);
     document.head.removeChild(styleLink);
-    icons.forEach(icon => {
+    document.querySelectorAll(".icon").forEach(icon => {
         icon.src = "";
         if (icon.parentElement.tagName == "A") icon.style.marginRight = "1em";
     });
-    thumbnails.forEach(thumbnail => thumbnail.style.maxWidth = "30%");
-    button.setAttribute("style",
-        `position: absolute;
-        top: 2.25em;
-        right: 1em;`
-    );
-    tooltip.innerText = "";
+    document.querySelectorAll(".projectThumbnail").forEach(thumbnail => thumbnail.style.maxWidth = "30%");
+    window.enlightenmentButton.setAttribute("style", "position: absolute; top: 2.25em; right: 1em;");
+    window.enlightenmentTooltip.innerText = "";
 }
 
-button.addEventListener("click", () => {
+window.enlightenmentButton.addEventListener("click", () => {
     enlightened = !enlightened;
 
     //transition smoothly to/from retro styling
-    pageContent.style.opacity = 0;
+    window.mainContent.style.opacity = 0;
     background.style.opacity = 0;
     if (!enlightened) {
         document.body.appendChild(background);
@@ -58,4 +49,4 @@ button.addEventListener("click", () => {
     localStorage.setItem("enlightened", enlightened ? 1 : "");
 });
 
-button.parentElement.classList.toggle("hidden");
+window.enlightenmentButton.parentElement.classList.toggle("hidden");

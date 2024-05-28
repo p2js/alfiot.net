@@ -8,9 +8,9 @@
 :root {
     --text-color: #ccc;
     --accent-color: #329977;
-    --main-link-filter: invert(65%) brightness(100%);
-    --main-link-hover-filter: invert(85%) brightness(100%);
-    --project-link-filter: invert(95%) brightness(100%);
+    --main-link-filter: invert(65%);
+    --main-link-hover-filter: invert(85%);
+    --project-link-filter: invert(95%);
     --startup-animation-delay: 0.1s;
 }
 
@@ -52,6 +52,16 @@
 strong {
     color: var(--accent-color);
     font-weight: normal;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    filter: brightness(120%);
 }
 
 /* text fonts */
