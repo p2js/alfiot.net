@@ -14,6 +14,27 @@
     <meta content="https://alfiot.net" property="og:url" />
     <meta property="og:title" content="Hi, I'm Alfio" />
     <meta content="I program things and I like math" property="og:description" />
+    <!--Xenon Templates-->
+    <template _="project" name link github-repo thumbnail-src>
+        <div class="project">
+            <h3 class="header"><b>{name}</b></h3>
+            <div class="projectIcons">
+                <if link>
+                    <a href="{link}" rel="noreferrer" target="_blank">
+                        <img class="icon" src="resources/icons/link.svg" alt="Link" />
+                    </a>
+                </if>
+                <a href="https://github.com/{github-repo}" rel="noreferrer" target="_blank">
+                    <img class="icon" src="resources/icons/github.svg" alt="Github" />
+                </a>
+            </div>
+            <p class="text">{$children}</p>
+            <if thumbnail-src>
+                <img class="projectThumbnail" src="{thumbnail-src}" alt="Project thumbnail" />
+            </if>
+        </div>
+    </template>
+    <script defer src="https://cdn.jsdelivr.net/gh/p2js/xenon@latest/xenon.min.js"></script>
 </head>
 
 <body>
@@ -39,7 +60,7 @@
             </div>
             <hr />
             <p class="description"><span id="age"></span><noscript>2005</noscript>, Italian <strong>|</strong> Studying
-                CS & Math <strong>@</strong> University of St Andrews</p>
+                CS & Maths <strong>@</strong> University of St Andrews</p>
             <p class="description">Experience in JS/TS, Rust, Java</p>
         </div>
 
@@ -47,68 +68,43 @@
             <div id="workingOn">
                 <h2 class="header">What I'm working on</h2>
                 <hr />
-                <ul>
-                    <li class="text">
-                        <a href="https://github.com/p2js/webless" rel="noreferrer" target="_blank">Webless</a>, a
-                        HTML-only web browser built from scratch in Rust.
-                    </li>
-                    <li class="text">
-                        <a href="https://github.com/p2js/rsformat" rel="noreferrer" target="_blank">RSFormat</a>, a
-                        minimal yet powerful JavaScript string formatting and printing library.
-                    </li>
-                </ul>
+                <p class="text">
+                    Developing <a href="https://github.com/p2js/acuity" rel="noreferrer" target="_blank">Acuity</a>, a
+                    minimal note-taking app with a focus on mathematics.
+                </p>
+                <br>
+                <p class="text">
+                    Also undertaking an internship project developing a solid.js based activity management platform for
+                    <a href="https://www.alpadia.com/en" rel="noreferrer" target="_blank">Alpadia Language Schools</a>.
+                </p>
             </div>
 
             <div id="projects">
                 <h2 class="header">Some of my projects</h2>
                 <hr />
-                <div class="project">
-                    <h3 class="header"><b>Verbena</b></h3>
-                    <div class="projectIcons">
-                        <a href="https://github.com/p2js/verbena" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/github.svg" alt="Github" />
-                        </a>
-                    </div>
-                    <p class="text">A TypeScript library that transcompiles mathematical function definitions to native
-                        JS functions in an end-user-safe way.</p>
-                    <img src="resources/thumbnails/verbena.png" alt="Project thumbnail" class="projectThumbnail">
-                </div>
-                <div class="project">
-                    <h3 class="header"><b>Televideo Web</b></h3>
-                    <div class="projectIcons">
-                        <a href="/televideo" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/link.svg" alt="Link" />
-                        </a>
-                        <a href="https://github.com/p2js/televideo-web" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/github.svg" alt="Github" />
-                        </a>
-                    </div>
-                    <p class="text">A better web browser for RAI's Italian teletext service, Televideo.</p>
-                    <img class="projectThumbnail" src="resources/thumbnails/televideo.png" alt="Project thumbnail" />
-                </div>
-                <div class="project">
-                    <h3 class="header"><b>Mat-rs</b></h3>
-                    <div class="projectIcons">
-                        <a href="https://github.com/p2js/mat-rs" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/github.svg" alt="Github" />
-                        </a>
-                    </div>
-                    <p class="text">A no-std implementation of mathematical matrix types in Rust.</p>
-                </div>
-                <div class="project">
-                    <h3 class="header"><b>Shaditor</b></h3>
-                    <div class="projectIcons">
-                        <a href="/shaditor" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/link.svg" alt="Link" />
-                        </a>
-                        <a href="https://github.com/p2js/shaditor" rel="noreferrer" target="_blank">
-                            <img class="icon" src="resources/icons/github.svg" alt="Github" />
-                        </a>
-                    </div>
-                    <p class="text">A lightweight and fully client-side browser GLSL shader editor, with flexible frame
-                        controls and local saving.</p>
-                    <img class="projectThumbnail" src="resources/thumbnails/shaditor.png" alt="Project thumbnail" />
-                </div>
+                <noscript class="text">
+                    This website uses Xenon components; Enable JavaScript to see project thumbnails and links!
+                </noscript>
+                <project name="Verbena" github-repo="p2js/verbena">
+                    Typescript library that transcompiles mathematical function definitions to native JS functions in an
+                    end-user-safe-way.
+                </project>
+                <project name="Xenon" github-repo="p2js/xenon" thumbnail-src="resources/thumbnails/xenon.png">
+                    Implementation of a component system in static HTML, using less than 650 bytes of JS.
+                    Now in use
+                    <a href="https://github.com/p2js/alfiot.net" rel="noreferrer" target="_blank">
+                        in this website!</a>
+                </project>
+                <project name="Televideo Web" link="/televideo" github-repo="p2js/televideo-web"
+                    thumbnail-src="resources/thumbnails/televideo.png">
+                    Better web browser for RAI's Italian teletext service, Televideo.
+                </project>
+                <project name="RSFormat" github-repo="p2js/rsformat" thumbnail-src="resources/thumbnails/rsformat.png">
+                    Minimal yet powerful JavaScript string formatting and printing library.
+                </project>
+                <project name="Mat-RS" github-repo="p2js/mat-rs">
+                    No-std implementation of mathematical matrix types in Rust.
+                </project>
             </div>
 
             <div id="more">
@@ -152,7 +148,7 @@
         </div>
     </div>
     <img id="background" src="resources/background.jpg" />
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 </body>
 
 </html>

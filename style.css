@@ -45,7 +45,8 @@
 
 .header,
 .description,
-.text {
+.text,
+project {
     color: var(--text-color);
 }
 
@@ -73,7 +74,8 @@ a:hover {
 }
 
 .description,
-.text {
+.text,
+project {
     font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -194,10 +196,32 @@ li {
     animation: 0.5s backwards ease calc(var(--startup-animation-delay) + 0.7s) 1 slide-in;
 }
 
+/* current work */
+
+.currentThumbnail {
+    width: 90%;
+    margin: 1em 5% 0;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    filter: drop-shadow(0 0 1em black);
+}
+
 /* projects */
 
 .project {
     margin-top: 1.75em;
+}
+
+/* Fallback Styling */
+
+project {
+    display: block;
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+project::before {
+    content: "•"
 }
 
 .projectThumbnail {
@@ -208,6 +232,7 @@ li {
     margin-bottom: 3em;
     max-width: 100%;
     max-height: 15em;
+    filter: drop-shadow(0 0 0.5em #0006);
 }
 
 /* project icons */
@@ -253,6 +278,7 @@ li {
 }
 
 #enlightenmentButton {
+    cursor: pointer;
     background: transparent;
     border: none;
 }
