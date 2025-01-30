@@ -17,7 +17,8 @@ if (enlightened) removeStyle();
 function removeStyle() {
     document.body.removeChild(background);
     document.head.removeChild(styleLink);
-    document.querySelectorAll(".icon").forEach(icon => {
+    document.querySelectorAll("img").forEach(icon => {
+        if (icon.className.toLowerCase().endsWith("thumbnail")) return;
         icon.src = "";
         if (icon.parentElement.tagName == "A") icon.style.marginRight = "1em";
     });
@@ -32,6 +33,7 @@ window.enlightenmentButton.addEventListener("click", () => {
     //transition smoothly to/from retro styling
     window.mainContent.style.opacity = 0;
     background.style.opacity = 0;
+    window.nav.style.opacity = 0;
     if (!enlightened) {
         document.body.appendChild(background);
         background.style.transitionDelay = "0ms";

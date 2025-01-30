@@ -21,11 +21,11 @@
             <div class="projectIcons">
                 <if link>
                     <a href="{link}" rel="noreferrer" target="_blank">
-                        <img class="icon" src="resources/icons/link.svg" alt="Link" />
+                        <img src="resources/icons/link.svg" alt="Link" />
                     </a>
                 </if>
                 <a href="https://github.com/{github-repo}" rel="noreferrer" target="_blank">
-                    <img class="icon" src="resources/icons/github.svg" alt="Github" />
+                    <img src="resources/icons/github.svg" alt="Github" />
                 </a>
             </div>
             <p class="text">{$children}</p>
@@ -38,28 +38,44 @@
 </head>
 
 <body>
+    <div id="nav">
+        <img id="navIcon" src="resources/icons/chevron.svg">
+        <div id="navContent">
+            <div class="navSection text">
+                <span class="header">Documents</span>
+                <a href="/art">Art and Utility</a>
+            </div>
+            <div class="navSection text">
+                <span class="header">Web Projects</span>
+                <a href="/pgimg">PGImg</a>
+                <a href="/televideo">Televideo Web</a>
+                <a href="/shaditor">Shaditor</a>
+            </div>
+        </div>
+    </div>
     <div id="mainContent">
         <div id="me">
             <h1 class="header">Hi, I'm <strong>Alfio</strong></h1>
             <div id="linkIcons">
                 <a href="https://github.com/p2js" rel="noreferrer" target="_blank">
-                    <img class="icon" src="resources/icons/github.svg" alt="Github" />
+                    <img src="resources/icons/github.svg" alt="Github" />
                 </a>
 
                 <a href="https://instagram.com/no.moreideas" rel="noreferrer" target="_blank">
-                    <img class="icon" src="resources/icons/instagram.svg" alt="Instagram" />
+                    <img src="resources/icons/instagram.svg" alt="Instagram" />
                 </a>
 
                 <a href="mailto:tomarchioalfio5@gmail.com" rel="noreferrer" target="_blank">
-                    <img class="icon" src="resources/icons/email.svg" alt="Email me" />
+                    <img src="resources/icons/email.svg" alt="Email me" />
                 </a>
 
                 <a href="https://discord.com/users/313350543835922432" rel="noreferrer" target="_blank">
-                    <img class="icon" src="resources/icons/discord.svg" alt="Discord" />
+                    <img src="resources/icons/discord.svg" alt="Discord" />
                 </a>
             </div>
             <hr />
-            <p class="description"><span id="age"></span><noscript>2005</noscript>, Italian <strong>|</strong> Studying
+            <p class="description"><span id="age"></span><noscript>2005</noscript>, Italian <strong>|</strong>
+                Studying
                 CS & Maths <strong>@</strong> University of St Andrews</p>
             <p class="description">Experience in JS/TS, Rust, Java</p>
         </div>
@@ -69,24 +85,24 @@
                 <h2 class="header">What I'm working on</h2>
                 <hr />
                 <p class="text">
-                    Developing <a href="https://github.com/p2js/acuity" rel="noreferrer" target="_blank">Acuity</a>, a
+                    Developing <a href="https://github.com/p2js/acuity" rel="noreferrer" target="_blank">Acuity</a>,
+                    a
                     minimal note-taking app with a focus on mathematics.
                 </p>
-                <br>
                 <p class="text">
-                    Also undertaking an internship project developing a solid.js based activity management platform for
-                    <a href="https://www.alpadia.com/en" rel="noreferrer" target="_blank">Alpadia Language Schools</a>.
+                    I'm Also undertaking an internship project developing a solid.js based activity management
+                    platform
+                    for <a href="https://www.alpadia.com/en" rel="noreferrer" target="_blank">
+                        Alpadia Language Schools</a>.
                 </p>
             </div>
 
             <div id="projects">
                 <h2 class="header">Some of my projects</h2>
                 <hr />
-                <noscript class="text">
-                    This website uses Xenon components; Enable JavaScript to see project thumbnails and links!
-                </noscript>
                 <project name="Verbena" github-repo="p2js/verbena">
-                    Typescript library that transcompiles mathematical function definitions to native JS functions in an
+                    Typescript library that transcompiles mathematical function definitions to native JS functions
+                    in an
                     end-user-safe-way.
                 </project>
                 <project name="Xenon" github-repo="p2js/xenon" thumbnail-src="resources/thumbnails/xenon.png">
@@ -142,7 +158,7 @@
         <img class="hidden" style="margin-top: 2em" src="resources/notepad.gif" />
         <div class="hidden" id="enlightenment">
             <button id="enlightenmentButton">
-                <img class="icon" src="resources/icons/sun.svg" alt="Disable enlightenment" />
+                <img src="resources/icons/sun.svg" alt="Disable enlightenment" />
             </button>
             <span id="enlightenmentTooltip" class="header">For the eyes of the enlightened</span>
         </div>
