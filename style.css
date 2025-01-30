@@ -403,6 +403,12 @@ project::before {
 
     #mainContent {
         width: 95%;
+        gap: 0;
+    }
+
+    #me {
+        position: relative;
+        margin-bottom: 6em;
     }
 
     #linkIcons {
@@ -410,7 +416,8 @@ project::before {
         display: flex;
         z-index: 3;
         left: 50%;
-        transform: translate(-50%, 11em);
+        transform: translate(-50%);
+        bottom: -3.5em;
     }
 
     #linkIcons a+a {
@@ -418,7 +425,6 @@ project::before {
     }
 
     #info {
-        margin-top: 5em;
         display: grid;
         grid-template-columns: 95vw;
         grid-column-gap: 0;
