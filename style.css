@@ -398,7 +398,7 @@ project::before {
     /* spacing */
     #background {
         /* background hotfix for dynamic browser UIs */
-        min-height: 150vh;
+        min-height: 120vh;
     }
 
     #mainContent {
@@ -410,7 +410,7 @@ project::before {
         display: flex;
         z-index: 3;
         left: 50%;
-        transform: translate(-50%, 10em);
+        transform: translate(-50%, 11em);
     }
 
     #linkIcons a+a {
@@ -418,7 +418,7 @@ project::before {
     }
 
     #info {
-        margin-top: 10em;
+        margin-top: 5em;
         display: grid;
         grid-template-columns: 95vw;
         grid-column-gap: 0;
